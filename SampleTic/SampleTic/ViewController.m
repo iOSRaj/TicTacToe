@@ -275,7 +275,7 @@ for(TileView *t1 in tileArray)
         [UIView animateWithDuration:0.35
                          animations:^{_resetButton.alpha = 1.0;}];
         
-       
+        NSLog(@"Model for tiles %d",model.count);
         //LOCK ALL TILES
         for (i = 0; i < model.count; i++)
         {
@@ -355,8 +355,7 @@ for(TileView *t1 in tileArray)
     
     if (tempView.tag!= -1)
     {
-       
-        
+         NSLog(@"Tile areaa countLocked");
         [[tileArray objectAtIndex:currentTile] setTileLocked:YES]; //Once locked not update 
     }
     
@@ -364,8 +363,7 @@ for(TileView *t1 in tileArray)
     int count;
     
     count = [tileArray count];
-   
-    
+    NSLog(@"Tile arrya count %d",[tileArray count]);
     
     //For images
     for (i = 0; i < count; i++)
@@ -403,8 +401,7 @@ for(TileView *t1 in tileArray)
     
     tileChosen = YES;
     currentTile = tile;
- 
-    
+    NSLog(@"Tile %d",tile);
     
  
     if (tileChosen)
@@ -413,13 +410,13 @@ for(TileView *t1 in tileArray)
         {
            [[tileArray objectAtIndex:currentTile] setBackgroundColor:UIColorFromRGB(0xffc604)];
             
-          
+            NSLog(@"whoseTurn");
         }
         else
         {
             [[tileArray objectAtIndex:currentTile] setBackgroundColor:UIColorFromRGB(0x00d0ff)];
 
-           
+            NSLog(@"whoseTurn not ");
         }
         
         [choiceArray replaceObjectAtIndex:currentTile withObject:[NSNumber numberWithInt:whoseTurn]];
